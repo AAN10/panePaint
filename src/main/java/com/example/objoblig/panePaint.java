@@ -3,7 +3,6 @@ package com.example.objoblig;
 import com.example.objoblig.shape.*;
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.canvas.Canvas;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
@@ -18,7 +17,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
-public class HelloApplication extends Application {
+public class panePaint extends Application {
 
     private Form[] former = new Form[500];
     private int antFormer = 0;
@@ -32,11 +31,9 @@ public class HelloApplication extends Application {
     private double forDrattX;
     private double forDrattY;
 
-    private MouseEvent dragged;
+    //private MouseEvent dragged;
     //figuren som blir dratt(null hvis ingen)
     private Form figurBlirDratt = null;
-    private double startY;
-    private double startX;
     private double endX;
     private double endY;
 
@@ -100,8 +97,6 @@ public class HelloApplication extends Application {
 
 
         //dette setter knappene i en toggle group og legger til en lytter som lar brukeren lage en figur
-        //btnSirkel.setCursor(Cursor.HAND);
-        //btnRektangel.setCursor(Cursor.HAND);
         btnSirkel.setToggleGroup(toggleFigurer);
         btnRektangel.setToggleGroup(toggleFigurer);
         btnLinje.setToggleGroup(toggleFigurer);
@@ -269,9 +264,6 @@ public class HelloApplication extends Application {
         }
     }
 
-    private MouseEvent getMouseEvent(MouseEvent e) {
-        return e;
-    }
 
     //metoden som lar brukeren flytte på figurene og endre størrelsen på dem
     private void musDragget(MouseEvent evt) {
@@ -317,20 +309,5 @@ public class HelloApplication extends Application {
         tegnCanvas();
     }
 
-
-    // denne figuren hjelper med å endre størrlsen på figuren
-    public void nyStørrelse(MouseEvent scrollEvent) {
-        double x = scrollEvent.getX();
-        double y = scrollEvent.getY();
-        if (figurBlirDratt != null) {
-            double deltaX = x - forDrattX;
-            double deltaY = y - forDrattY;
-            figurBlirDratt.endreStørrelse(deltaX, deltaY);
-            forDrattX = x;
-            forDrattY = y;
-            tegnCanvas(); // tegner canvas på nytt for å vise figuren i ny størrelse
-        }
-
-    }
 
 }

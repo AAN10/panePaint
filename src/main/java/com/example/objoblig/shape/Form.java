@@ -1,9 +1,7 @@
 package com.example.objoblig.shape;
 
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-import org.w3c.dom.Node;
 
 public interface Form {
 

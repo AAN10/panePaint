@@ -1,15 +1,12 @@
 package com.example.objoblig.shape;
 
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 
-import java.awt.*;
 
 public class Linje extends Line implements Form {
     double startX, startY, endX, endY;
-    private Line line;
     private Color farge;
 
     Color color;
@@ -75,37 +72,7 @@ public class Linje extends Line implements Form {
         return this.getBoundsInParent().contains(x, y);
     }
 
-    //    public void setStartX(double x){
-//        this.startX = x;
-//    }
-//
-//    public void setStartY(double y){
-//        this.startY =  y;
-//    }
-//
-//    public double getStartX(){
-//        return startX;
-//    }
-//
-//    public double getStartY(){
-//        return startY;
-//    }
-//    //=====
-//    public void setEndX(double x){
-//        this.endX = x;
-//    }
-//
-//    public void setEndY(double y){
-//        this.endY = (int) y;
-//    }
-//
-//    public double getEndX(){
-//        return endX;
-//    }
-//
-//    public double getEndY(){
-//        return endY;
-//    }
+
     @Override
     public double getAreal() {
         // linje har ikke en areal så returnerer 0

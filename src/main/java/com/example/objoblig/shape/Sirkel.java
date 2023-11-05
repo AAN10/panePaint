@@ -1,10 +1,8 @@
 package com.example.objoblig.shape;
 
 
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 
 //dette er en klasse for sirkel
@@ -20,7 +18,6 @@ public class Sirkel extends Circle implements Form  {
         this.y = ey;
         this.radius = radius;
     }
-    public Sirkel(){}
     @Override
     public  void tegn(Pane g) {
 
